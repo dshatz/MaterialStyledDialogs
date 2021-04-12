@@ -145,6 +145,16 @@ internal interface IBuilder {
     fun setDescription(description: CharSequence): MaterialStyledDialog.Builder?
 
     /**
+     * Set a color for the dialog title text.
+     */
+    fun setTitleTextColor(@ColorRes color: Int): MaterialStyledDialog.Builder?
+
+    /**
+     * Set a color for the dialog description text.
+     */
+    fun setDescriptionTextColor(@ColorRes color: Int): MaterialStyledDialog.Builder?
+
+    /**
      * Set a color for the dialog header. Default: Theme primary color.
      *
      * @param color for the header

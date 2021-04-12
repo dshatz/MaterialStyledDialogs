@@ -102,6 +102,10 @@ class MaterialStyledDialog(
         val dialogDivider =
             contentView.findViewById(R.id.mdStyledDialogDivider) as View
 
+        // Set text colors for title and description
+        builder.titleTextColor?.let { dialogTitle.setTextColor(it) }
+        builder.descriptionTextColor?.let { dialogDescription.setTextColor(it) }
+
         // Set header color or drawable
         if (builder.headerDrawable != null) {
             dialogHeader.setImageDrawable(builder.headerDrawable)
@@ -196,6 +200,8 @@ class MaterialStyledDialog(
         var maxLines: Int?
         var title: CharSequence? = null
         var description: CharSequence? = null
+        var titleTextColor: Int? = null
+        var descriptionTextColor: Int? = null
         var customView: View? = null
         var customViewPaddingLeft = 0
         var customViewPaddingTop = 0
@@ -299,6 +305,16 @@ class MaterialStyledDialog(
 
         override fun setDescription(description: CharSequence): Builder {
             this.description = description
+            return this
+        }
+
+        override fun setTitleTextColor(color: Int): Builder? {
+            this.titleTextColor = color
+            return this
+        }
+
+        override fun setDescriptionTextColor(color: Int): Builder? {
+            this.descriptionTextColor = color
             return this
         }
 
