@@ -308,12 +308,12 @@ class MaterialStyledDialog(
             return this
         }
 
-        override fun setTitleTextColor(color: Int): Builder? {
+        override fun setTitleTextColor(color: Int): Builder {
             this.titleTextColor = color
             return this
         }
 
-        override fun setDescriptionTextColor(color: Int): Builder? {
+        override fun setDescriptionTextColor(color: Int): Builder {
             this.descriptionTextColor = color
             return this
         }
