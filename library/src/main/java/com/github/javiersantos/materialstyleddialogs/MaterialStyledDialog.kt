@@ -13,6 +13,8 @@ import android.widget.ImageView.ScaleType
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.*
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatDrawableManager
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.res.ResourcesCompat
 import com.afollestad.materialdialogs.DialogCallback
@@ -279,7 +281,7 @@ class MaterialStyledDialog(
         }
 
         override fun setIcon(@DrawableRes iconRes: Int?): Builder {
-            iconDrawable = ResourcesCompat.getDrawable(context.resources, iconRes!!, null)
+            iconDrawable = AppCompatResources.getDrawable(context, iconRes!!)
             return this
         }
 
